@@ -3,7 +3,7 @@ from handler import handler
 
 def main():
     print('Вас приветствует Бот-помощник')
-    print('Комманды доступные Вам: hello, add, change, phone, show all, exit, good bye, close, remove')
+    print('Комманды доступные Вам: hello, add, change, phone, show all, exit, good bye, close')
     print('Правильная запись: комманда, параметри')
     print('Все пишеться через пробел')
     print('Параметры add: Имя телефон')

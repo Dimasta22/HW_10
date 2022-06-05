@@ -24,7 +24,8 @@ def handler(sentence: str, phone_dict={}):
             name = Name(name)
             phone = Phone(number)
             record = Record(name, phone)
-            record.add_rec(phone_dict)
+            record.add_rec()
+            phone_dict.update({record.name.name: record.phones})
 
         if parser(sentence) == 'PHONE':
             _, name, *args = sentence.split(' ')
@@ -32,16 +33,9 @@ def handler(sentence: str, phone_dict={}):
 
         if parser(sentence) == 'CHANGE':
             _, name, new_number, *args = sentence.split(' ')
-            name = Name(name)
-            phone = Phone(new_number)
-            record = Record(name, phone)
-            record.add_rec(phone_dict)
-
-        if parser(sentence) == 'REMOVE':
-            _, name, *args = sentence.split(' ')
-            remove_person_name = Name(name)
-            record = Record(remove_person_name)
-            record.del_rec(phone_dict)
+            phone_dict[name] = new_number
+            # Тут будет изменен подход: другой ввод: change (del_num, add_num, change_num), имя и номер
+            # Имя и номер идут в рекорд, а пока, код работает в add_class
 
         return 'Операция прошла успешно'
     return all_function(sentence)

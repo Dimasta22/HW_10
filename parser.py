@@ -9,8 +9,7 @@ ACTION_list = [
     'SHOW ALL',
     'GOOD BYE',
     'CLOSE',
-    'EXIT',
-    'REMOVE'
+    'EXIT'
 ]
 
 
